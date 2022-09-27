@@ -1,2 +1,2 @@
 # Canvas rain demo
-<https://gusjoh.github.io/simple-canvas-rain/>
+<https://gusjoh.github.io/simple-canvas-weather/>
