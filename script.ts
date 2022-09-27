@@ -1,7 +1,9 @@
 "use strict";
-let canvasElement = null;
-let ctx = null;
-let weather = null;
+import {Rain} from './classes.js';
+let canvasElement: HTMLCanvasElement = null;
+let ctx: CanvasRenderingContext2D = null;
+let weather: Array<Object> = null;
+
 window.addEventListener("load", function(){ 
     canvasElement = document.querySelector("#canvasElement");
     ctx = canvasElement.getContext("2d", { alpha: false });
@@ -24,7 +26,7 @@ function instantiateObjects(){
 function renderCanvas(){
     ctx.fillStyle = "black";
     ctx.fillRect(0, 0, canvasElement.width, canvasElement.height);
-    weather.forEach(element => {
+    weather.forEach((element: Rain) => {
         element.render();        
     });
     

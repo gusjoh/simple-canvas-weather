@@ -1,5 +1,11 @@
-class Rain{
-    constructor(canvasElement, context, severity = 0, wind = 0){
+export class Rain{
+    private cEl: HTMLCanvasElement;
+    private ctx: CanvasRenderingContext2D;
+    private severity: number;
+    private wind: number;
+    private raindrops: Array<Raindrop>;
+        
+    constructor(canvasElement: HTMLCanvasElement, context: CanvasRenderingContext2D, severity:number, wind:number = 0){
         this.cEl = canvasElement;
         this.ctx = context;
         this.severity = severity;
@@ -20,7 +26,15 @@ class Rain{
     }
 }
 class Raindrop {
-	constructor(canvasElement, context, severity = 0, wind = 0){
+    private cEl: HTMLCanvasElement;
+    private ctx: CanvasRenderingContext2D;
+    private severity: number;
+    private wind: number;
+    private x: number;
+    private y: number;
+    private length: number;
+    private yOffset: number;
+	constructor(canvasElement: HTMLCanvasElement, context: CanvasRenderingContext2D, severity = 0, wind = 0){
         this.cEl = canvasElement;
         this.ctx = context;
         var sizeAndOffsetCorrelation = Math.random();

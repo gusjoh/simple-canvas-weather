@@ -1,0 +1,6 @@
+{
+  "type": "module",
+  "devDependencies": {
+    "ts-loader": "^9.4.1"
+  }
+}
