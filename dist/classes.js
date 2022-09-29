@@ -26,13 +26,15 @@ var Raindrop = /** @class */ (function () {
     function Raindrop(canvasElement, context, severity, wind) {
         if (severity === void 0) { severity = 0; }
         if (wind === void 0) { wind = 0; }
+        this.severity = severity;
+        this.wind = wind;
         this.cEl = canvasElement;
         this.ctx = context;
-        var sizeAndOffsetCorrelation = Math.random();
+        this.sizeAndOffsetCorrelation = Math.random();
         this.x = Math.random() * this.cEl.width;
         this.y = Math.random() * this.cEl.height;
-        this.length = (sizeAndOffsetCorrelation * 2) + 10 + (severity * 50);
-        this.yOffset = (sizeAndOffsetCorrelation * .5) + (wind * 100);
+        this.length = (this.sizeAndOffsetCorrelation * 2) + 10 + (this.severity * 50);
+        this.yOffset = (this.sizeAndOffsetCorrelation * .5) + (this.wind * 100);
     }
     Raindrop.prototype.render = function () {
         this.ctx.beginPath();
